@@ -1,0 +1,20 @@
+{
+  "name": "auth",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/dingziqi/auth.git",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon ./server",
+    "cz": "cz"
+  },
+  "dependencies": {
+    "@koa/router": "^10.0.0",
+    "base-64": "^1.0.0",
+    "commitizen": "^4.2.2",
+    "ejs": "^3.1.5",
+    "koa": "^2.13.0",
+    "koa-views": "^6.3.1",
+    "nodemon": "^2.0.6"
+  }
+}
