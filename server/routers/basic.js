@@ -1,20 +1,8 @@
 const Router = require("@koa/router");
 const base64 = require("base-64");
+const getAuthInfo = require('../util/getAuthInfo');
 
 const router = new Router();
-
-const getUserInfo = (authorization = "") => {
-  try {
-    return base64.decode(authorization.split("Basic ")?.[1]);
-  } catch (err) {
-    return "invaild authorization";
-  }
-};
-
-router.get("/", (ctx, next) => {
-  ctx.body = "hello world";
-  next();
-});
 
 router.get("/httpBasicAuthentication", async (ctx) => {
   await ctx.render("httpBasicAuthentication");
@@ -29,7 +17,7 @@ router.get("/api/httpBasicAuthentication/login", async (ctx, next) => {
     ctx.body = "auth fail";
     next();
   } else {
-    ctx.body = `logined with: ${getUserInfo(req.headers.authorization)}`;
+    ctx.body = `logined with: ${getAuthInfo(req.headers.authorization).info}`;
     next();
   }
 });

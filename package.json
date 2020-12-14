@@ -11,6 +11,7 @@
   "dependencies": {
     "@koa/router": "^10.0.0",
     "base-64": "^1.0.0",
+    "change-case": "^4.1.2",
     "commitizen": "^4.2.2",
     "ejs": "^3.1.5",
     "koa": "^2.13.0",
